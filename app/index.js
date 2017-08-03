@@ -7,13 +7,13 @@ import {
   View
 } from 'react-native';
 import { Provider } from 'react-redux';
-import { createStore,applyMiddleware } from 'redux';
-import app from './components/app';
+import { createStore, applyMiddleware } from 'redux';
+import App from './containers/container1';
 import reducers from './reducers';
+import reduxPromise from 'redux-promise';
 
-
-const createStoreWithMiddleware = applyMiddleware()(createStore);
-const App = () => {
+const createStoreWithMiddleware = applyMiddleware(reduxPromise)(createStore);
+const App1 = () => {
   return (
   <Provider store={createStoreWithMiddleware(reducers)}>
     <App />
@@ -35,4 +35,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default App;
+export default App1;
