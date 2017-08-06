@@ -5,6 +5,9 @@ import {
   Text,
   View
 } from 'react-native'
+import {
+  StackNavigator,
+} from 'react-navigation';
 
 export default class app extends Component{
 	render(){
