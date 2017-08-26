@@ -6,12 +6,18 @@ export default function nav(state = null, action) {
   let nextState;
  
   switch (action.type) {
-    case 'first':
+    case 'Info':
       nextState = AppNavigator.router.getStateForAction(
-        NavigationActions.navigate({ routeName: 'Main' }),
+        NavigationActions.navigate({ routeName: 'Info' }),
         state
       );
       break;
+    case 'Preview':
+        nextState = AppNavigator.router.getStateForAction(
+          NavigationActions.navigate({ routeName: 'Preview',params:action.params }),
+          state
+        );
+        break;
     default:
       nextState = AppNavigator.router.getStateForAction(action, state);
       break;

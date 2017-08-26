@@ -15,3 +15,9 @@ export function first(){
 		type:'first'
 	};
 }
+export function navigate(scene,props){
+	return {
+		type:scene,
+		params:props
+	};
+}
